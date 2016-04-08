@@ -1813,8 +1813,8 @@ CREATE TABLE IF NOT EXISTS `core_config_data` (
 
 INSERT INTO `core_config_data` (`config_id`, `scope`, `scope_id`, `path`, `value`) VALUES
 (1, 'default', 0, 'web/seo/use_rewrites', '1'),
-(2, 'default', 0, 'web/unsecure/base_url', 'http://{HOST}/'),
-(3, 'default', 0, 'web/secure/base_url', 'https://{HOST}/'),
+(2, 'default', 0, 'web/unsecure/base_url', '{{base_url}}'),
+(3, 'default', 0, 'web/secure/base_url', '{{base_url}}'),
 (4, 'default', 0, 'general/locale/code', 'en_US'),
 (5, 'default', 0, 'web/secure/use_in_frontend', NULL),
 (6, 'default', 0, 'web/secure/use_in_adminhtml', NULL),
