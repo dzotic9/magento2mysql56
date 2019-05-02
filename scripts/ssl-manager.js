@@ -310,7 +310,9 @@ function SSLManager(config) {
         if (!config.isTask) {
             java.lang.System.out.println("DEBUG LE - no no  config.isTask -> ");
             me.logAction("StartUpdateLEFromContainer");
+            java.lang.System.out.println("DEBUG LE - session -> " + session);
             if (!session && me.hasValidToken()) {
+                java.lang.System.out.println("DEBUG LE - in !session && me.hasValidToken()) -> ");
                 session = signature;
             }
 
