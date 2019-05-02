@@ -308,22 +308,21 @@ function SSLManager(config) {
 
         java.lang.System.out.println("DEBUG LE - config.isTask -> " + config.isTask);
         if (!config.isTask) {
-            java.lang.System.out.println("DEBUG LE - no config.isTask -> ");
             java.lang.System.out.println("DEBUG LE - no no  config.isTask -> ");
             me.logAction("StartUpdateLEFromContainer");
-            java.lang.System.out.println("DEBUG LE - after logAction -> ");
             if (!session && me.hasValidToken()) {
                 session = signature;
             }
 
             java.lang.System.out.println("DEBUG LE - me.hasValidToken() -> " + me.hasValidToken());
             resp = nodeManager.getEnvInfo();
-
+            java.lang.System.out.println("DEBUG LE - after getEnvInfo -> " + resp);
             if (resp.result == 0) {
                 resp = log("checkPermissions");
             }
 
             java.lang.System.out.println("DEBUG LE - before checkEnvAccessAndUpdate -> ");
+            java.lang.System.out.println("DEBUG LE - after2 if checkPermissions getEnvInfo -> " + resp);
             if (resp && resp.result != 0) {
                 return me.checkEnvAccessAndUpdate(resp);
             }
