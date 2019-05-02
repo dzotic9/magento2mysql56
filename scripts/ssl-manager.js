@@ -310,17 +310,19 @@ function SSLManager(config) {
         if (!config.isTask) {
             java.lang.System.out.println("DEBUG LE - no config.isTask -> ");
             me.logAction("StartUpdateLEFromContainer");
-            
+            java.lang.System.out.println("DEBUG LE - after logAction -> ");
             if (!session && me.hasValidToken()) {
                 session = signature;
             }
 
+            java.lang.System.out.println("DEBUG LE - me.hasValidToken() -> " + me.hasValidToken());
             resp = nodeManager.getEnvInfo();
 
             if (resp.result == 0) {
                 resp = log("checkPermissions");
             }
 
+            java.lang.System.out.println("DEBUG LE - before checkEnvAccessAndUpdate -> ");
             if (resp && resp.result != 0) {
                 return me.checkEnvAccessAndUpdate(resp);
             }
