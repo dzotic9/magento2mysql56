@@ -308,6 +308,7 @@ function SSLManager(config) {
 
         java.lang.System.out.println("DEBUG LE - config.isTask -> " + config.isTask);
         if (!config.isTask) {
+            java.lang.System.out.println("DEBUG LE - no config.isTask -> ");
             me.logAction("StartUpdateLEFromContainer");
             
             if (!session && me.hasValidToken()) {
@@ -324,6 +325,10 @@ function SSLManager(config) {
                 return me.checkEnvAccessAndUpdate(resp);
             }
         }
+        
+        java.lang.System.out.println("DEBUG LE - after config.isTask -> ");
+        java.lang.System.out.println("DEBUG LE - config.patchVersion -> " + config.patchVersion);
+        java.lang.System.out.println("DEBUG LE - patchBuild -> " + patchBuild);
 
         if (config.patchVersion == patchBuild) {
         java.lang.System.out.println("DEBUG LE - before me.install-> ");
